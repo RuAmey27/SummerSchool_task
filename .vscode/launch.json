@@ -1,0 +1,115 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "QuickSortTracer",
+            "request": "launch",
+            "mainClass": "QuickSortTracer",
+            "projectName": "Summerschool_d85b48fc"
+        },
+        {
+            "type": "java",
+            "name": "GCDTracer",
+            "request": "launch",
+            "mainClass": "GCDTracer",
+            "projectName": "Summerschool_d85b48fc"
+        },
+        {
+            "type": "java",
+            "name": "cgpa_calculator",
+            "request": "launch",
+            "mainClass": "cgpa_calculator",
+            "projectName": "Summerschool_d85b48fc"
+        },
+        {
+            "type": "java",
+            "name": "QuickSort",
+            "request": "launch",
+            "mainClass": "QuickSort",
+            "projectName": "Summerschool_d85b48fc"
+        },
+        {
+            "type": "java",
+            "name": "mergesort",
+            "request": "launch",
+            "mainClass": "mergesort",
+            "projectName": "Summerschool_d85b48fc"
+        },
+        {
+            "type": "java",
+            "name": "Loops",
+            "request": "launch",
+            "mainClass": "Loops",
+            "projectName": "Summerschool_d85b48fc"
+        },
+        {
+            "type": "java",
+            "name": "Month",
+            "request": "launch",
+            "mainClass": "Month",
+            "projectName": "Summerschool_d85b48fc"
+        },
+        {
+            "type": "java",
+            "name": "Student",
+            "request": "launch",
+            "mainClass": "Student",
+            "projectName": "Summerschool_d85b48fc"
+        },
+        {
+            "type": "java",
+            "name": "CalendarYear",
+            "request": "launch",
+            "mainClass": "CalendarYear",
+            "projectName": "Summerschool_d85b48fc"
+        },
+        {
+            "type": "java",
+            "name": "registrationNo",
+            "request": "launch",
+            "mainClass": "registrationNo",
+            "projectName": "Summerschool_d85b48fc"
+        },
+        {
+            "type": "java",
+            "name": "Test",
+            "request": "launch",
+            "mainClass": "test.Test",
+            "projectName": "Summerschool_d85b48fc"
+        },
+        {
+            "type": "java",
+            "name": "rettype",
+            "request": "launch",
+            "mainClass": "rettype",
+            "projectName": "Summerschool_d85b48fc"
+        },
+        {
+            "type": "java",
+            "name": "calander",
+            "request": "launch",
+            "mainClass": "calander",
+            "projectName": "Summerschool_d85b48fc"
+        },
+        {
+            "type": "java",
+            "name": "pattern",
+            "request": "launch",
+            "mainClass": "pattern",
+            "projectName": "Summerschool_d85b48fc"
+        },
+        {
+            "type": "java",
+            "name": "MyInteger",
+            "request": "launch",
+            "mainClass": "java.MyInteger",
+            "projectName": "Summerschool_d85b48fc"
+        },
+        {
+            "type": "lldb",
+            "request": "attach",
+            "name": "Attach",
+            "program": "C:\\Users\\hp\\Documents\\Amey\\D:\\java programming"
+        }
+    ]
+}

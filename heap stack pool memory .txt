@@ -1,0 +1,418 @@
+heap stack pool memory 
+
+
+new ==> it will assing the memory from heap // String a= new String("amey");
+
+
+no new ==> it will assing the memory from pool // String a= "amey";
+
+
+==  // it checks refernece 
+
+.equals() // checks contents
+
+
+pooling means method intern() that is we can store obje x on x.intern() into poolmemory known as pooling
+
+
+new always give memory in the heap if heap have required space
+
+on  application of intern it shift object reference in pool  but same object will be avaliable in heap but not has it's it's reference in heap we only stored it's reference in pool 
+
+
+
+Jshell override the var names also 
+
+while Jshell they internally build classes
+
+
+--enable-preview// for some options we should use them after command 
+
+
+java program written in void main can be executed using 
+
+java --enable-preview classname 
+
+
+C:\Program Files\Java\jdk-17\bin>javap java.util.stream.IntStream
+Compiled from "IntStream.java"
+public interface java.util.stream.IntStream extends java.util.stream.BaseStream<java.lang.Integer, java.util.stream.IntStream> {
+  public abstract java.util.stream.IntStream filter(java.util.function.IntPredicate);
+  public abstract java.util.stream.IntStream map(java.util.function.IntUnaryOperator);
+  public abstract <U> java.util.stream.Stream<U> mapToObj(java.util.function.IntFunction<? extends U>);
+  public abstract java.util.stream.LongStream mapToLong(java.util.function.IntToLongFunction);
+  public abstract java.util.stream.DoubleStream mapToDouble(java.util.function.IntToDoubleFunction);
+  public abstract java.util.stream.IntStream flatMap(java.util.function.IntFunction<? extends java.util.stream.IntStream>);
+  public default java.util.stream.IntStream mapMulti(java.util.stream.IntStream$IntMapMultiConsumer);
+  public abstract java.util.stream.IntStream distinct();
+  public abstract java.util.stream.IntStream sorted();
+  public abstract java.util.stream.IntStream peek(java.util.function.IntConsumer);
+  public abstract java.util.stream.IntStream limit(long);
+  public abstract java.util.stream.IntStream skip(long);
+  public default java.util.stream.IntStream takeWhile(java.util.function.IntPredicate);
+  public default java.util.stream.IntStream dropWhile(java.util.function.IntPredicate);
+  public abstract void forEach(java.util.function.IntConsumer);
+  public abstract void forEachOrdered(java.util.function.IntConsumer);
+  public abstract int[] toArray();
+  public abstract int reduce(int, java.util.function.IntBinaryOperator);
+  public abstract java.util.OptionalInt reduce(java.util.function.IntBinaryOperator);
+  public abstract <R> R collect(java.util.function.Supplier<R>, java.util.function.ObjIntConsumer<R>, java.util.function.BiConsumer<R, R>);
+  public abstract int sum();
+  public abstract java.util.OptionalInt min();
+  public abstract java.util.OptionalInt max();
+  public abstract long count();
+  public abstract java.util.OptionalDouble average();
+  public abstract java.util.IntSummaryStatistics summaryStatistics();
+  public abstract boolean anyMatch(java.util.function.IntPredicate);
+  public abstract boolean allMatch(java.util.function.IntPredicate);
+  public abstract boolean noneMatch(java.util.function.IntPredicate);
+  public abstract java.util.OptionalInt findFirst();
+  public abstract java.util.OptionalInt findAny();
+  public abstract java.util.stream.LongStream asLongStream();
+  public abstract java.util.stream.DoubleStream asDoubleStream();
+  public abstract java.util.stream.Stream<java.lang.Integer> boxed();
+  public abstract java.util.stream.IntStream sequential();
+  public abstract java.util.stream.IntStream parallel();
+  public abstract java.util.PrimitiveIterator$OfInt iterator();
+  public abstract java.util.Spliterator$OfInt spliterator();
+  public static java.util.stream.IntStream$Builder builder();
+  public static java.util.stream.IntStream empty();
+  public static java.util.stream.IntStream of(int);
+  public static java.util.stream.IntStream of(int...);
+  public static java.util.stream.IntStream iterate(int, java.util.function.IntUnaryOperator);
+  public static java.util.stream.IntStream iterate(int, java.util.function.IntPredicate, java.util.function.IntUnaryOperator);
+  public static java.util.stream.IntStream generate(java.util.function.IntSupplier);
+  public static java.util.stream.IntStream range(int, int);
+  public static java.util.stream.IntStream rangeClosed(int, int);
+  public static java.util.stream.IntStream concat(java.util.stream.IntStream, java.util.stream.IntStream);
+  public default java.util.stream.BaseStream parallel();
+  public default java.util.stream.BaseStream sequential();
+  public default java.util.Spliterator spliterator();
+  public default java.util.Iterator iterator();
+}
+
+C:\Program Files\Java\jdk-17\bin>jshell
+|  Welcome to JShell -- Version 17.0.9
+|  For an introduction type: /help intro
+
+jshell> IntStream.
+Builder               IntMapMultiConsumer   builder()             class                 concat(
+empty()               generate(             iterate(              of(                   range(
+rangeClosed(
+jshell> IntStream.Builder
+Signatures:
+java.util.stream.IntStream.Builder
+
+<press tab again to see documentation>
+jshell> IntStream.Builder
+java.util.stream.IntStream.Builder
+A mutable builder for an IntStream .
+A stream builder has a lifecycle, which starts in a building phase, during which elements can
+be added, and then transitions to a built phase, after which elements may not be added. The
+built phase begins when the #build() method is called, which creates an ordered stream whose
+elements are the elements that were added to the stream builder, in the order they were added.
+jshell> IntStream.IntMapMultiConsumer
+Signatures:
+java.util.stream.IntStream.IntMapMultiConsumer
+
+<press tab again to see documentation>
+jshell> IntStream.IntMapMultiConsumer
+java.util.stream.IntStream.IntMapMultiConsumer
+Represents an operation that accepts an int -valued argument and an IntConsumer, and returns no
+result.This functional interface is used by IntStream.mapMulti to replace an int value with
+zero or more int values.
+This is a functional interface whose functional method is #accept(int, IntConsumer) .
+jshell> IntStream.builder(
+Signatures:
+IntStream.Builder IntStream.builder()
+
+<press tab again to see documentation>
+jshell> IntStream.builder(
+IntStream.Builder IntStream.builder()
+Returns a builder for an IntStream .
+
+Returns:
+a stream builder
+
+<press tab again to see all possible completions; total possible completions: 543>
+jshell> IntStream.class
+Signatures:
+IntStream.class:java.lang.Class<java.util.stream.IntStream>
+
+<press tab again to see documentation>
+jshell> IntStream.class
+IntStream.class:java.lang.Class<java.util.stream.IntStream>
+<no documentation found>
+jshell> IntStream.concat(
+Signatures:
+IntStream IntStream.concat(IntStream a, IntStream b)
+
+<press tab again to see documentation>
+jshell> IntStream.concat(
+IntStream IntStream.concat(IntStream a, IntStream b)
+Creates a lazily concatenated stream whose elements are all the elements of the first stream
+followed by all the elements of the second stream.The resulting stream is ordered if both of
+the input streams are ordered, and parallel if either of the input streams is parallel. When
+the resulting stream is closed, the close handlers for both input streams are invoked.
+This method operates on the two input streams and binds each stream to its source. As a result
+subsequent modifications to an input stream source may not be reflected in the concatenated
+stream result.
+
+Parameters:
+a - the first stream
+b - the second stream
+
+Returns:
+the concatenation of the two input streams
+
+<press tab again to see all possible completions; total possible completions: 543>
+jshell> IntStream.generate(
+Signatures:
+IntStream IntStream.generate(IntSupplier s)
+
+<press tab again to see documentation>
+jshell> IntStream.generate(
+IntStream IntStream.generate(IntSupplier s)
+Returns an infinite sequential unordered stream where each element is generated by the provided
+IntSupplier .This is suitable for generating constant streams, streams of random elements, etc.
+
+Parameters:
+s - the IntSupplier for generated elements
+
+Returns:
+a new infinite sequential unordered IntStream
+
+<press tab again to see all possible completions; total possible completions: 543>
+jshell> IntStream.of(
+   ...>
+
+jshell>
+
+jshell> IntStream.of()
+Signatures:
+IntStream IntStream.of(int t)
+IntStream IntStream.of(int... values)
+
+<press tab again to see all possible completions>
+jshell> IntStream.of()
+<press tab again to see documentation>
+jshell> /exit()
+|  Invalid command: /exit()
+|  Type /help for help.
+
+jshell> exit
+|  Error:
+|  cannot find symbol
+|    symbol:   variable exit
+|  exit
+|  ^--^
+
+jshell> /exit
+|  Goodbye
+
+C:\Program Files\Java\jdk-17\bin>javap String
+Error: class not found: String
+
+C:\Program Files\Java\jdk-17\bin>javap java.lang.String
+Compiled from "String.java"
+public final class java.lang.String implements java.io.Serializable, java.lang.Comparable<java.lang.String>, java.lang.CharSequence, java.lang.constant.Constable, java.lang.constant.ConstantDesc {
+  static final boolean COMPACT_STRINGS;
+  public static final java.util.Comparator<java.lang.String> CASE_INSENSITIVE_ORDER;
+  static final byte LATIN1;
+  static final byte UTF16;
+  public java.lang.String();
+  public java.lang.String(java.lang.String);
+  public java.lang.String(char[]);
+  public java.lang.String(char[], int, int);
+  public java.lang.String(int[], int, int);
+  public java.lang.String(byte[], int, int, int);
+  public java.lang.String(byte[], int);
+  public java.lang.String(byte[], int, int, java.lang.String) throws java.io.UnsupportedEncodingException;
+  public java.lang.String(byte[], int, int, java.nio.charset.Charset);
+  static java.lang.String newStringUTF8NoRepl(byte[], int, int);
+  static java.lang.String newStringNoRepl(byte[], java.nio.charset.Charset) throws java.nio.charset.CharacterCodingException;
+  static byte[] getBytesUTF8NoRepl(java.lang.String);
+  static byte[] getBytesNoRepl(java.lang.String, java.nio.charset.Charset) throws java.nio.charset.CharacterCodingException;
+  static int decodeASCII(byte[], int, char[], int, int);
+  public java.lang.String(byte[], java.lang.String) throws java.io.UnsupportedEncodingException;
+  public java.lang.String(byte[], java.nio.charset.Charset);
+  public java.lang.String(byte[], int, int);
+  public java.lang.String(byte[]);
+  public java.lang.String(java.lang.StringBuffer);
+  public java.lang.String(java.lang.StringBuilder);
+  public int length();
+  public boolean isEmpty();
+  public char charAt(int);
+  public int codePointAt(int);
+  public int codePointBefore(int);
+  public int codePointCount(int, int);
+  public int offsetByCodePoints(int, int);
+  public void getChars(int, int, char[], int);
+  public void getBytes(int, int, byte[], int);
+  public byte[] getBytes(java.lang.String) throws java.io.UnsupportedEncodingException;
+  public byte[] getBytes(java.nio.charset.Charset);
+  public byte[] getBytes();
+  public boolean equals(java.lang.Object);
+  public boolean contentEquals(java.lang.StringBuffer);
+  public boolean contentEquals(java.lang.CharSequence);
+  public boolean equalsIgnoreCase(java.lang.String);
+  public int compareTo(java.lang.String);
+  public int compareToIgnoreCase(java.lang.String);
+  public boolean regionMatches(int, java.lang.String, int, int);
+  public boolean regionMatches(boolean, int, java.lang.String, int, int);
+  public boolean startsWith(java.lang.String, int);
+  public boolean startsWith(java.lang.String);
+  public boolean endsWith(java.lang.String);
+  public int hashCode();
+  public int indexOf(int);
+  public int indexOf(int, int);
+  public int lastIndexOf(int);
+  public int lastIndexOf(int, int);
+  public int indexOf(java.lang.String);
+  public int indexOf(java.lang.String, int);
+  static int indexOf(byte[], byte, int, java.lang.String, int);
+  public int lastIndexOf(java.lang.String);
+  public int lastIndexOf(java.lang.String, int);
+  static int lastIndexOf(byte[], byte, int, java.lang.String, int);
+  public java.lang.String substring(int);
+  public java.lang.String substring(int, int);
+  public java.lang.CharSequence subSequence(int, int);
+  public java.lang.String concat(java.lang.String);
+  public java.lang.String replace(char, char);
+  public boolean matches(java.lang.String);
+  public boolean contains(java.lang.CharSequence);
+  public java.lang.String replaceFirst(java.lang.String, java.lang.String);
+  public java.lang.String replaceAll(java.lang.String, java.lang.String);
+  public java.lang.String replace(java.lang.CharSequence, java.lang.CharSequence);
+  public java.lang.String[] split(java.lang.String, int);
+  public java.lang.String[] split(java.lang.String);
+  public static java.lang.String join(java.lang.CharSequence, java.lang.CharSequence...);
+  static java.lang.String join(java.lang.String, java.lang.String, java.lang.String, java.lang.String[], int);
+  public static java.lang.String join(java.lang.CharSequence, java.lang.Iterable<? extends java.lang.CharSequence>);
+  public java.lang.String toLowerCase(java.util.Locale);
+  public java.lang.String toLowerCase();
+  public java.lang.String toUpperCase(java.util.Locale);
+  public java.lang.String toUpperCase();
+  public java.lang.String trim();
+  public java.lang.String strip();
+  public java.lang.String stripLeading();
+  public java.lang.String stripTrailing();
+  public boolean isBlank();
+  public java.util.stream.Stream<java.lang.String> lines();
+  public java.lang.String indent(int);
+  public java.lang.String stripIndent();
+  public java.lang.String translateEscapes();
+  public <R> R transform(java.util.function.Function<? super java.lang.String, ? extends R>);
+  public java.lang.String toString();
+  public java.util.stream.IntStream chars();
+  public java.util.stream.IntStream codePoints();
+  public char[] toCharArray();
+  public static java.lang.String format(java.lang.String, java.lang.Object...);
+  public static java.lang.String format(java.util.Locale, java.lang.String, java.lang.Object...);
+  public java.lang.String formatted(java.lang.Object...);
+  public static java.lang.String valueOf(java.lang.Object);
+  public static java.lang.String valueOf(char[]);
+  public static java.lang.String valueOf(char[], int, int);
+  public static java.lang.String copyValueOf(char[], int, int);
+  public static java.lang.String copyValueOf(char[]);
+  public static java.lang.String valueOf(boolean);
+  public static java.lang.String valueOf(char);
+  public static java.lang.String valueOf(int);
+  public static java.lang.String valueOf(long);
+  public static java.lang.String valueOf(float);
+  public static java.lang.String valueOf(double);
+  public native java.lang.String intern();
+  public java.lang.String repeat(int);
+  void getBytes(byte[], int, byte);
+  void getBytes(byte[], int, int, byte, int);
+  java.lang.String(char[], int, int, java.lang.Void);
+  java.lang.String(java.lang.AbstractStringBuilder, java.lang.Void);
+  java.lang.String(byte[], byte);
+  byte coder();
+  byte[] value();
+  boolean isLatin1();
+  static void checkIndex(int, int);
+  static void checkOffset(int, int);
+  static void checkBoundsOffCount(int, int, int);
+  static void checkBoundsBeginEnd(int, int, int);
+  static java.lang.String valueOfCodePoint(int);
+  public java.util.Optional<java.lang.String> describeConstable();
+  public java.lang.String resolveConstantDesc(java.lang.invoke.MethodHandles$Lookup);
+  public int compareTo(java.lang.Object);
+  public java.lang.Object resolveConstantDesc(java.lang.invoke.MethodHandles$Lookup) throws java.lang.ReflectiveOperationException;
+  static {};
+}
+
+C:\Program Files\Java\jdk-17\bin>javap java.lang.Integer
+Compiled from "Integer.java"
+public final class java.lang.Integer extends java.lang.Number implements java.lang.Comparable<java.lang.Integer>, java.lang.constant.Constable, java.lang.constant.ConstantDesc {
+  public static final int MIN_VALUE;
+  public static final int MAX_VALUE;
+  public static final java.lang.Class<java.lang.Integer> TYPE;
+  static final char[] digits;
+  static final byte[] DigitTens;
+  static final byte[] DigitOnes;
+  static final int[] sizeTable;
+  public static final int SIZE;
+  public static final int BYTES;
+  public static java.lang.String toString(int, int);
+  public static java.lang.String toUnsignedString(int, int);
+  public static java.lang.String toHexString(int);
+  public static java.lang.String toOctalString(int);
+  public static java.lang.String toBinaryString(int);
+  public static java.lang.String toString(int);
+  public static java.lang.String toUnsignedString(int);
+  static int getChars(int, int, byte[]);
+  static int stringSize(int);
+  public static int parseInt(java.lang.String, int) throws java.lang.NumberFormatException;
+  public static int parseInt(java.lang.CharSequence, int, int, int) throws java.lang.NumberFormatException;
+  public static int parseInt(java.lang.String) throws java.lang.NumberFormatException;
+  public static int parseUnsignedInt(java.lang.String, int) throws java.lang.NumberFormatException;
+  public static int parseUnsignedInt(java.lang.CharSequence, int, int, int) throws java.lang.NumberFormatException;
+  public static int parseUnsignedInt(java.lang.String) throws java.lang.NumberFormatException;
+  public static java.lang.Integer valueOf(java.lang.String, int) throws java.lang.NumberFormatException;
+  public static java.lang.Integer valueOf(java.lang.String) throws java.lang.NumberFormatException;
+  public static java.lang.Integer valueOf(int);
+  public java.lang.Integer(int);
+  public java.lang.Integer(java.lang.String) throws java.lang.NumberFormatException;
+  public byte byteValue();
+  public short shortValue();
+  public int intValue();
+  public long longValue();
+  public float floatValue();
+  public double doubleValue();
+  public java.lang.String toString();
+  public int hashCode();
+  public static int hashCode(int);
+  public boolean equals(java.lang.Object);
+  public static java.lang.Integer getInteger(java.lang.String);
+  public static java.lang.Integer getInteger(java.lang.String, int);
+  public static java.lang.Integer getInteger(java.lang.String, java.lang.Integer);
+  public static java.lang.Integer decode(java.lang.String) throws java.lang.NumberFormatException;
+  public int compareTo(java.lang.Integer);
+  public static int compare(int, int);
+  public static int compareUnsigned(int, int);
+  public static long toUnsignedLong(int);
+  public static int divideUnsigned(int, int);
+  public static int remainderUnsigned(int, int);
+  public static int highestOneBit(int);
+  public static int lowestOneBit(int);
+  public static int numberOfLeadingZeros(int);
+  public static int numberOfTrailingZeros(int);
+  public static int bitCount(int);
+  public static int rotateLeft(int, int);
+  public static int rotateRight(int, int);
+  public static int reverse(int);
+  public static int signum(int);
+  public static int reverseBytes(int);
+  public static int sum(int, int);
+  public static int max(int, int);
+  public static int min(int, int);
+  public java.util.Optional<java.lang.Integer> describeConstable();
+  public java.lang.Integer resolveConstantDesc(java.lang.invoke.MethodHandles$Lookup);
+  public int compareTo(java.lang.Object);
+  public java.lang.Object resolveConstantDesc(java.lang.invoke.MethodHandles$Lookup) throws java.lang.ReflectiveOperationException;
+  static {};
+}
+
+C:\Program Files\Java\jdk-17\bin>
