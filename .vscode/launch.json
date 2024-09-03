@@ -2,6 +2,41 @@
     "configurations": [
         {
             "type": "java",
+            "name": "solution",
+            "request": "launch",
+            "mainClass": "solution",
+            "projectName": "Summerschool_d85b48fc"
+        },
+        {
+            "type": "java",
+            "name": "Solution",
+            "request": "launch",
+            "mainClass": "Solution",
+            "projectName": "Summerschool_d85b48fc"
+        },
+        {
+            "type": "java",
+            "name": "JosephusProblemStack",
+            "request": "launch",
+            "mainClass": "JosephusProblemStack",
+            "projectName": "Summerschool_d85b48fc"
+        },
+        {
+            "type": "java",
+            "name": "otherJosephus",
+            "request": "launch",
+            "mainClass": "otherJosephus",
+            "projectName": "Summerschool_d85b48fc"
+        },
+        {
+            "type": "java",
+            "name": "JosephusProblem",
+            "request": "launch",
+            "mainClass": "JosephusProblem",
+            "projectName": "Summerschool_d85b48fc"
+        },
+        {
+            "type": "java",
             "name": "QuickSortTracer",
             "request": "launch",
             "mainClass": "QuickSortTracer",
